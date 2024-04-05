@@ -1,11 +1,29 @@
 {
   "name": "logseq-deadline-countdown",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "xxchan",
   "main": "index.html",
   "description": "Counts how many days left until the deadline.",
   "license": "MIT",
   "logseq": {
-    "id": "_logseq_deadline_countdown"
+    "id": "logseq-deadline-countdown",
+    "title": "Deadline Countdown",
+    "main": "./dist/index.html"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "clean": "rm -r ./dist/*",
+    "dev": "vite",
+    "build": "vite build --mode=dev",
+    "prod": "pnpm run clean && vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.4",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.8",
+    "vite-plugin-logseq": "^1.1.2"
+  },
+  "dependencies": {
+    "@logseq/libs": "^0.0.17"
   }
 }

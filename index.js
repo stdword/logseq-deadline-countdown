@@ -1,3 +1,6 @@
+import '@logseq/libs'
+
+
 const SETTINGS_SCHEMA = [
   {
     key: 'show-future',
@@ -123,7 +126,7 @@ async function main() {
   logseq.onSettingsChanged(settingsHandler);
   logseq.useSettingsSchema(SETTINGS_SCHEMA);
   const pluginId = logseq.baseInfo.id
-  console.info(`#${pluginId}: MAIN`)
+  console.info(`#${pluginId}: Loaded`)
 
   const observer = new MutationObserver((mutationList) => {
     for (const mutation of mutationList) {
